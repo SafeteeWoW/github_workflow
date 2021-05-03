@@ -31,6 +31,8 @@ jobs:
       - run: Get-Command gcc
 
       - run: Get-Command make
+      
+      - run: uname -s
       #- run: choco install make
       
       #- run: Get-Command make
