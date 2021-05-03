@@ -24,10 +24,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Enable Developer Command Prompt
-        uses: ilammy/msvc-dev-cmd@d39d8f7626e5667b00caa504eaefd7c24c9ba49d
-        with:
-          arch: x64
-  
-      - name: Install reference compressor (zdeflate, puff)
-        run: pwsh -File.github/workflows/windows/install_compressor.ps1
+      - run: echo $ENV:PATH
+      
+      - run: Get-Command mingw64-make
