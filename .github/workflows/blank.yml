@@ -27,3 +27,8 @@ jobs:
       - run: echo $ENV:PATH
       
       - run: ls "C:/Program Files/Git/mingw64/bin"
+      
+      - run: choco install make
+      
+      - run: Get-Command make
+  
