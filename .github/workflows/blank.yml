@@ -29,14 +29,5 @@ jobs:
         with:
           arch: x64
   
-      # Runs a single command using the runners shell
-      - name: Print PATH
-        run: Write-Output $ENV:PATH
-      
-      - name: print cl help
-        run: |
-          cl /?
-          Get-Command cl
-          nmake /?
-          Get-Command nmake
-  
+      - name: Install reference compressor (zdeflate, puff)
+        run: bash .github/workflows/unix/install_compressor.sh
