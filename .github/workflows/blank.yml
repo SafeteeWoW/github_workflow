@@ -24,10 +24,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Enable Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@d39d8f7626e5667b00caa504eaefd7c24c9ba49d
+        with:
+          arch: x64
+  
       # Runs a single command using the runners shell
       - name: Print PATH
         run: Write-Output $ENV:PATH
       
       - name: print cl help
-        run: cl /?
+        run: |
+          cl /?
+          Get-Command cl
+          nmake /?
+          Get-Command nmake
   
