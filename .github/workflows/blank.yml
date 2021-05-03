@@ -30,4 +30,4 @@ jobs:
           arch: x64
   
       - name: Install reference compressor (zdeflate, puff)
-        run: bash .github/workflows/unix/install_compressor.sh
+        run: pwsh -File.github/workflows/windows/install_compressor.ps1
