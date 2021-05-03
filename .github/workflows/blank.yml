@@ -32,7 +32,12 @@ jobs:
 
       - run: Get-Command make
       
-      - run: uname -s
+      - name: uname in powershell
+        run: uname -s
+      
+      - name: uname in bash
+        run: uname -s
+        shell: bash
       #- run: choco install make
       
       #- run: Get-Command make
