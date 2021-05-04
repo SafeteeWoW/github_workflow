@@ -28,5 +28,5 @@ jobs:
           git remote -v
           git branch -a
           git config --list
-          git branch -a gh-pages
+          git branch -b gh-pages
           git push -u origin gh-pages
