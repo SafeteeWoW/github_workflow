@@ -25,5 +25,5 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: test
-        path: tests/*
+        path: test/*
         if-no-files-found: error
