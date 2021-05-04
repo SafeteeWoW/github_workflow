@@ -17,28 +17,16 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-20.04
     # The type of runner that the job will run on
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - run: echo $ENV:PATH
-      
-      - run: ls "C:/Program Files/Git/mingw64/bin"
-      
-      - run: Get-Command gcc
-
-      - run: Get-Command make
-      
-      - name: uname in powershell
-        run: uname -s
-      
-      - name: uname in bash
-        run: uname -s
-        shell: bash
-      #- run: choco install make
-      
-      #- run: Get-Command make
-  
+      - run: |
+          git remote -v
+          git branch -a
+          git config --list
+          git branch -a gh-pages
+          git push -u origin gh-pages
